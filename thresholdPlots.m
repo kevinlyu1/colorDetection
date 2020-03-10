@@ -4,13 +4,21 @@
 % greenIntensityFinder.m
 
 
-outputValues = ["fileName","Threshold","originalMean","thresholdMean","originalArea","thresholdArea","maxGreen","minGreen"];
+% outputValues = ["fileName","Threshold","originalMean","thresholdMean","originalArea","thresholdArea","maxGreen","minGreen"];
 folderOut = 'outputs/thresholdPlots/';
 folderIn = 'inputs/dataSet1/';
 
-for i = 1:8
+% for i = 1:8
+%     for j = 0:25:255
+%         fileName = sprintf('agrodrench%d.jpeg', i);
+%         threshold = j;
+%         [originalMean,thresholdMean,originalArea,thresholdArea,maxGreen,minGreen] = greenIntensityFinder(fileName,folderOut,folderIn,threshold);
+%         outputValues(end+1,:) = [string(fileName),string(threshold),string(originalMean),string(thresholdMean),string(originalArea),string(thresholdArea),string(maxGreen),string(minGreen)];
+%     end
+% end
+for i = 1:4
     for j = 0:25:255
-        fileName = sprintf('agrodrench%d.jpeg', i);
+        fileName = sprintf('GFP control%d.jpeg', i);
         threshold = j;
         [originalMean,thresholdMean,originalArea,thresholdArea,maxGreen,minGreen] = greenIntensityFinder(fileName,folderOut,folderIn,threshold);
         outputValues(end+1,:) = [string(fileName),string(threshold),string(originalMean),string(thresholdMean),string(originalArea),string(thresholdArea),string(maxGreen),string(minGreen)];
