@@ -16,7 +16,7 @@ just_green = cat(3, allBlack, greenChannelNew, allBlack);
 orignalArea = nnz(greenChannel);
 threshArea = nnz(greenChannelNew);
 maxGreen = max(greenChannelNew,[],'all');
-minGreen = min(greenChannelNew(greenChannelNew>0));
+minGreen = min(greenChannelNew(greenChannelNew>=0));
 % Display them all.
 subplot(2, 1, 1);
 imshow(rgbImage);

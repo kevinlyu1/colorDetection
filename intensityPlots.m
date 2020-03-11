@@ -1,21 +1,23 @@
 % intensityPlots.m
 % creates a line plot with the x axis as the green intensity and y axis as
 % the number of pixels in the picture.
-
-folderOut = 'outputs/intensityPlots/';
-folderIn = 'inputs/dataSet1/';
-fontSize = 20;
-maxX = 270;
-maxY = (row1*col1)/9;
+clc
+folderOut = 'outputs/intensityPlots/dataSet2/';
+folderIn = 'inputs/dataSet2/';
 
 
-fileName = sprintf('agrodrench1.jpeg');
+fileName = sprintf('agrodrench1.png');
 titleName = [folderIn,fileName];
 temp = join(titleName);
 rgbImage = imread(temp);
 [row1,col1] = size(rgbImage);
-for i = 1:8
-    fileName = sprintf('agrodrench%d.jpeg', i);
+
+fontSize = 20;
+maxX = 270;
+maxY = (row1*col1)/9;
+
+for i = 1:4
+    fileName = sprintf('agrodrench%d.png', i);
     titleName = [folderIn,fileName];
     temp = join(titleName);
     rgbImage = imread(temp);
@@ -39,7 +41,7 @@ for i = 1:8
 end
 
 for i = 1:4
-    fileName = sprintf('GFP control%d.jpeg', i);
+    fileName = sprintf('control%d.png', i);
     titleName = [folderIn,fileName];
     temp = join(titleName);
     rgbImage = imread(temp);
@@ -60,4 +62,4 @@ for i = 1:4
     titleName = [folderOut,fileName,thresholdSTR];
     temp = join(titleName);
     saveas(gcf,temp)
-end
+    endls
