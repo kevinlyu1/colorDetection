@@ -1,2 +1,2 @@
 # colorDetection
-Detects the green color intensity of plots.
+Detects the green color intensity of the plots.Filter out pixels with low intensity. 
